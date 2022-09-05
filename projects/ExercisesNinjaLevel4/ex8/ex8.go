@@ -1,15 +1,22 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	x := map[string]string{
-		"Vinicius_Catureba": "Sorvete",
-		"Joao_Marques":      "Pastel",
-		"Igor_Reis":         "Gym",
+	x := map[string][]string{
+		"Vinicius_Catureba": []string{"Sorvete", "cafe", "snowboard"},
+		"Joao_Marques":      []string{"Pastel", "praia", "viajar"},
+		"Igor_Reis":         []string{"Gym", "carro", "pagode"},
 	}
-	for t := len(x); t == 0; t++ {
-		fmt.Printf("%v\t%v\n", t, x)
-	}
+	fmt.Println(x)
+	fmt.Println(len(x))
 
+	for k, v := range x {
+		fmt.Println("This is the record for ", k)
+		for i, v2 := range v {
+			fmt.Println("\t", i, v2)
+		}
+	}
 }
