@@ -25,6 +25,17 @@ func main() {
 
 	foo()
 	println(z)
+	
+	
+	//it is also possible to use this var declarations:
+	
+	var (
+		t = 43
+		g = 33
+	)
+	
+	b := 13
+	fmt.Println(t, g, b)
 }
 
 func foo() {
