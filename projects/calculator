@@ -1,0 +1,58 @@
+package main
+
+import "fmt"
+
+func main() {
+	num1, num2, operation := choose()
+	switch operation {
+	case "+":
+		add(num1, num2)
+	case "-":
+		subtraction(num1, num2)
+	case "*":
+		multiplication(num1, num2)
+	case "/":
+		if num2 != 0 {
+			division(num1, num2)
+		} else {
+			fmt.Println("You cannot divide by 0, try again")
+			main()
+		}
+
+	}
+}
+
+func choose() (num1 int, num2 int, operation string) {
+
+	fmt.Println("Type the sort of your operation (+, -, *, /)")
+	fmt.Scanln(&operation)
+
+	fmt.Println("Then type the first number and then type the second number")
+	fmt.Scan(&num1, &num2)
+
+	return num1, num2, operation
+}
+
+func add(num1 int, num2 int) {
+	result := num1 + num2
+	fmt.Println("The result of the addition is", result)
+
+}
+
+func subtraction(num1 int, num2 int) {
+	result := num1 - num2
+	fmt.Println("The result of the subtraction is", result)
+
+}
+
+func multiplication(num1 int, num2 int) {
+	result := num1 * num2
+	fmt.Println("The result of the multiplication is", result)
+
+}
+
+func division(num1 int, num2 int) {
+	result := num1 / num2
+	fmt.Println("The result of the multiplication is", result)
+
+}
